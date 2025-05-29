@@ -295,62 +295,83 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Enhanced Footer -->
+    </section>    <!-- Enhanced Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-section" data-aos="fade-up">
                     <h3>Shop</h3>
                     <ul>
-                        <li><a href="#furniture">Furniture</a></li>
-                        <li><a href="#lighting">Lighting</a></li>
-                        <li><a href="#decor">Home Décor</a></li>
-                        <li><a href="#kitchen">Kitchen & Dining</a></li>
-                        <li><a href="#bedroom">Bedroom</a></li>
-                        <li><a href="#outdoor">Outdoor Living</a></li>
+                        <li><a href="#furniture" data-tooltip="Browse Luxury Furniture">Furniture</a></li>
+                        <li><a href="#lighting" data-tooltip="Explore Lighting Solutions">Lighting</a></li>
+                        <li><a href="#decor" data-tooltip="Discover Home Décor">Home Décor</a></li>
+                        <li><a href="#kitchen" data-tooltip="Kitchen & Dining Collections">Kitchen & Dining</a></li>
+                        <li><a href="#bedroom" data-tooltip="Bedroom Essentials">Bedroom</a></li>
+                        <li><a href="#outdoor" data-tooltip="Outdoor Living Spaces">Outdoor Living</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="#design">Interior Design</a></li>
-                        <li><a href="#delivery">Free Delivery</a></li>
-                        <li><a href="#installation">Installation</a></li>
-                        <li><a href="#warranty">Extended Warranty</a></li>
-                        <li><a href="#consultation">Design Consultation</a></li>
-                        <li><a href="#support">24/7 Support</a></li>
+                        <li><a href="#design" data-tooltip="Professional Design Services">Interior Design</a></li>
+                        <li><a href="#delivery" data-tooltip="Complimentary Delivery">Free Delivery</a></li>
+                        <li><a href="#installation" data-tooltip="Expert Installation">Installation</a></li>
+                        <li><a href="#warranty" data-tooltip="Product Protection">Extended Warranty</a></li>
+                        <li><a href="#consultation" data-tooltip="Expert Consultation">Design Consultation</a></li>
+                        <li><a href="#support" data-tooltip="Always Here to Help">24/7 Support</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
                     <h3>Company</h3>
                     <ul>
-                        <li><a href="#about">About HomeIns</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#sustainability">Sustainability</a></li>
-                        <li><a href="#press">Press</a></li>
-                        <li><a href="#investors">Investors</a></li>
-                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#about" data-tooltip="Our Story">About HomeIns</a></li>
+                        <li><a href="#careers" data-tooltip="Join Our Team">Careers</a></li>
+                        <li><a href="#sustainability" data-tooltip="Environmental Commitment">Sustainability</a></li>
+                        <li><a href="#press" data-tooltip="Latest News">Press</a></li>
+                        <li><a href="#investors" data-tooltip="Investor Relations">Investors</a></li>
+                        <li><a href="#blog" data-tooltip="Design Insights & Tips">Blog</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
                     <h3>Connect</h3>
                     <div class="social-links">
-                        <a href="#instagram" class="social-link">Instagram</a>
-                        <a href="#pinterest" class="social-link">Pinterest</a>
-                        <a href="#facebook" class="social-link">Facebook</a>
-                        <a href="#youtube" class="social-link">YouTube</a>
+                        <a href="#instagram" class="social-link" data-platform="instagram">
+                            <span class="social-icon">📸</span>
+                            <span class="social-name">Instagram</span>
+                        </a>
+                        <a href="#pinterest" class="social-link" data-platform="pinterest">
+                            <span class="social-icon">📌</span>
+                            <span class="social-name">Pinterest</span>
+                        </a>
+                        <a href="#facebook" class="social-link" data-platform="facebook">
+                            <span class="social-icon">👥</span>
+                            <span class="social-name">Facebook</span>
+                        </a>
+                        <a href="#youtube" class="social-link" data-platform="youtube">
+                            <span class="social-icon">🎥</span>
+                            <span class="social-name">YouTube</span>
+                        </a>
                     </div>
                     <div class="newsletter">
-                        <h4>Newsletter</h4>
-                        <p>Stay updated with our latest collections</p>
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <p>Get exclusive offers and design inspiration</p>
                         <form class="newsletter-form">
-                            <input type="email" placeholder="Your email" required>
-                            <button type="submit">Subscribe</button>
+                            <div class="input-group">
+                                <input type="email" required>
+                                <div class="input-focus-bg"></div>
+                            </div>
+                            <button type="submit" class="subscribe-btn">
+                                <span class="default-text">Subscribe</span>
+                                <span class="loading-text">
+                                    <svg class="spinner" viewBox="0 0 50 50">
+                                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                    </svg>
+                                </span>
+                                <span class="success-text">✓</span>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -360,16 +381,17 @@
                 <div class="footer-legal">
                     <p>&copy; 2025 HomeIns. All rights reserved.</p>
                     <div class="legal-links">
-                        <a href="#privacy">Privacy Policy</a>
-                        <a href="#terms">Terms of Service</a>
-                        <a href="#cookies">Cookie Policy</a>
+                        <a href="#privacy" data-tooltip="View Privacy Policy">Privacy Policy</a>
+                        <a href="#terms" data-tooltip="Read Terms of Service">Terms of Service</a>
+                        <a href="#cookies" data-tooltip="Cookie Preferences">Cookie Policy</a>
                     </div>
                 </div>
                 <div class="footer-tagline">
-                    <p>Luxury living, delivered to your doorstep. ✨</p>
+                    <p>Luxury living, delivered to your doorstep. <span class="sparkle">✨</span></p>
                 </div>
             </div>
         </div>
+        <div class="footer-gradient"></div>
     </footer>
 
     <!-- Back to Home Button -->
