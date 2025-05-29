@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - HomeIns | Luxury Living Redefined</title>
+    <meta name="description" content="Discover HomeIns - your premier destination for luxury home solutions. Founded in 2020, we curate exceptional living experiences with 10,000+ premium products from 500+ designer brands.">
+    <meta name="keywords" content="luxury home decor, premium furniture, interior design, home solutions">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="logo-loader">HomeIns</div>
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Crafting Excellence...</p>
+        </div>
+    </div>
+
+    <!-- Header with enhanced navigation -->
+    <header id="main-header" class="header">
+        <nav class="container nav-container">
+            <div class="logo-container">
+                <div class="logo">HomeIns</div>
+                <span class="tagline">Luxury Living</span>
+            </div>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+                <li><a href="#products" class="nav-link" data-section="products">Products</a></li>
+                <li><a href="#collections" class="nav-link" data-section="collections">Collections</a></li>
+                <li><a href="#about" class="nav-link active" data-section="about">About</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-extras">
+                <button class="search-btn" aria-label="Search">
+                    <span class="search-icon">🔍</span>
+                </button>
+                <button class="cart-btn" aria-label="Shopping Cart">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="mobile-menu" id="mobile-menu" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Enhanced Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">About</span>
+                    <span class="title-line gold-text">HomeIns</span>
+                </h1>
+                <p class="hero-subtitle">Crafting exceptional living experiences through premium home solutions that inspire, comfort, and elevate everyday life.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10000">0</span>
+                        <span class="stat-label">Premium Products</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500">0</span>
+                        <span class="stat-label">Designer Brands</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50000">0</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Enhanced Story Section -->
+    <section class="story section-padding" id="story">
+        <div class="container">
+            <div class="story-content animate-on-scroll">
+                <div class="story-text">
+                    <div class="section-badge">Our Journey</div>
+                    <h2 class="section-title">Our Story</h2>
+                    <div class="story-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2020</div>
+                            <p>Founded with a vision to transform how people experience their homes, HomeIns began as a passion project between interior designers and craftspeople who believed that luxury shouldn't be exclusive.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2022</div>
+                            <p>What started as a small curated collection has grown into a comprehensive platform featuring over 10,000 premium products from 500+ designer brands worldwide.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025</div>
+                            <p>Today, we're proud to serve over 50,000 customers who trust us to help create their perfect living spaces, one room at a time.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-visual">
+                    <div class="story-image">
+                        <div class="image-overlay">
+                            <span class="story-icon">🏡</span>
+                        </div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="float-element">✨</div>
+                        <div class="float-element">🎨</div>
+                        <div class="float-element">💎</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Values Section -->
+    <section class="values section-padding" id="values">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">What Drives Us</div>
+                <h2 class="section-title">Our Values</h2>
+                <p class="section-subtitle">The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card animate-on-scroll" data-delay="0">
+                    <div class="card-glow"></div>
+                    <div class="value-icon-container">
+                        <span class="value-icon">✨</span>
+                    </div>
+                    <h3>Quality First</h3>
+                    <p>We believe in exceptional craftsmanship and only partner with brands that share our commitment to quality and durability.</p>
+                    <div class="card-footer">
+                        <span class="learn-more">Excellence in Every Detail</span>
+                    </div>
+                </div>
+                
+                <div class="value-card animate-on-scroll" data-delay="0.1">
+                    <div class="card-glow"></div>
+                    <div class="value-icon-container">
+                        <span class="value-icon">🎨</span>
+                    </div>
+                    <h3>Design Excellence</h3>
+                    <p>Every product is curated by our design experts to ensure it meets our high standards for beauty and functionality.</p>
+                    <div class="card-footer">
+                        <span class="learn-more">Curated by Experts</span>
+                    </div>
+                </div>
+                
+                <div class="value-card animate-on-scroll" data-delay="0.2">
+                    <div class="card-glow"></div>
+                    <div class="value-icon-container">
+                        <span class="value-icon">🤝</span>
+                    </div>
+                    <h3>Customer Obsessed</h3>
+                    <p>Your satisfaction is our priority. We provide personalized service and support throughout your home transformation journey.</p>
+                    <div class="card-footer">
+                        <span class="learn-more">Your Journey Matters</span>
+                    </div>
+                </div>
+                
+                <div class="value-card animate-on-scroll" data-delay="0.3">
+                    <div class="card-glow"></div>
+                    <div class="value-icon-container">
+                        <span class="value-icon">🌱</span>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We're committed to responsible sourcing and supporting brands that prioritize environmental consciousness.</p>
+                    <div class="card-footer">
+                        <span class="learn-more">Future-Focused</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Team Section -->
+    <section class="team section-padding" id="team">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Leadership</div>
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle">The visionaries behind HomeIns excellence</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member animate-on-scroll" data-delay="0">
+                    <div class="member-card">
+                        <div class="member-avatar">
+                            <span class="avatar-emoji">👩‍💼</span>
+                            <div class="avatar-ring"></div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Sarah Chen</h3>
+                            <div class="role">Founder & CEO</div>
+                            <p>Interior designer with 15+ years of experience in luxury home design. Sarah's vision drives our commitment to exceptional quality and design.</p>
+                            <div class="member-social">
+                                <a href="#" class="social-link">LinkedIn</a>
+                                <a href="#" class="social-link">Twitter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member animate-on-scroll" data-delay="0.1">
+                    <div class="member-card">
+                        <div class="member-avatar">
+                            <span class="avatar-emoji">👨‍🎨</span>
+                            <div class="avatar-ring"></div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Marcus Rodriguez</h3>
+                            <div class="role">Creative Director</div>
+                            <p>Award-winning designer who curates our collections and ensures every product meets our aesthetic standards.</p>
+                            <div class="member-social">
+                                <a href="#" class="social-link">LinkedIn</a>
+                                <a href="#" class="social-link">Behance</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member animate-on-scroll" data-delay="0.2">
+                    <div class="member-card">
+                        <div class="member-avatar">
+                            <span class="avatar-emoji">👩‍💻</span>
+                            <div class="avatar-ring"></div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Emily Watson</h3>
+                            <div class="role">Customer Experience Lead</div>
+                            <p>Dedicated to ensuring every customer receives personalized attention and finds their perfect home solutions.</p>
+                            <div class="member-social">
+                                <a href="#" class="social-link">LinkedIn</a>
+                                <a href="#" class="social-link">Twitter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member animate-on-scroll" data-delay="0.3">
+                    <div class="member-card">
+                        <div class="member-avatar">
+                            <span class="avatar-emoji">👨‍🔧</span>
+                            <div class="avatar-ring"></div>
+                        </div>
+                        <div class="member-info">
+                            <h3>David Kim</h3>
+                            <div class="role">Operations Director</div>
+                            <p>Ensures seamless delivery and installation services, making your home transformation process effortless.</p>
+                            <div class="member-social">
+                                <a href="#" class="social-link">LinkedIn</a>
+                                <a href="#" class="social-link">Twitter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Mission Section -->
+    <section class="mission section-padding" id="mission">
+        <div class="container">
+            <div class="mission-content animate-on-scroll">
+                <div class="section-badge">Purpose</div>
+                <h2 class="section-title">Our Mission</h2>
+                <div class="mission-text">
+                    <p class="mission-statement">To make luxury living accessible and inspire people to create homes that reflect their unique style and personality. We believe that everyone deserves to live beautifully.</p>
+                    <p>Through carefully curated collections, expert guidance, and exceptional service, we're here to help you transform your house into the home of your dreams.</p>
+                </div>
+                <div class="mission-cta">
+                    <a href="#contact" class="cta-button">
+                        <span>Start Your Journey</span>
+                        <div class="button-glow"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#furniture">Furniture</a></li>
+                        <li><a href="#lighting">Lighting</a></li>
+                        <li><a href="#decor">Home Décor</a></li>
+                        <li><a href="#kitchen">Kitchen & Dining</a></li>
+                        <li><a href="#bedroom">Bedroom</a></li>
+                        <li><a href="#outdoor">Outdoor Living</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#design">Interior Design</a></li>
+                        <li><a href="#delivery">Free Delivery</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#warranty">Extended Warranty</a></li>
+                        <li><a href="#consultation">Design Consultation</a></li>
+                        <li><a href="#support">24/7 Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About HomeIns</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#investors">Investors</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#instagram" class="social-link">Instagram</a>
+                        <a href="#pinterest" class="social-link">Pinterest</a>
+                        <a href="#facebook" class="social-link">Facebook</a>
+                        <a href="#youtube" class="social-link">YouTube</a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Newsletter</h4>
+                        <p>Stay updated with our latest collections</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2025 HomeIns. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+                <div class="footer-tagline">
+                    <p>Luxury living, delivered to your doorstep. ✨</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Home Button -->
+    <a href="#home" class="back-home" id="back-home" aria-label="Back to Home">
+        <span class="back-icon">←</span>
+        <span class="back-text">Home</span>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to Top">
+        <span class="scroll-icon">↑</span>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
