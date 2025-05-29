@@ -706,6 +706,216 @@ class PerformanceMonitor {
     }
 }
 
+// Footer Controller
+class FooterController {
+    constructor() {
+        this.newsletterForm = $('.newsletter-form');
+        this.socialLinks = $$('.social-link');
+        this.footerLinks = $$('.footer-section a');
+        this.footer = $('.footer');
+        this.init();
+    }
+
+    init() {
+        this.bindEvents();
+        this.animateFooterLinks();
+        this.initializeParallax();
+        this.setupSocialShare();
+    }
+
+    bindEvents() {
+        // Handle newsletter form submission
+        if (this.newsletterForm) {
+            this.newsletterForm.addEventListener('submit', this.handleNewsletterSubmit.bind(this));
+            this.addInputAnimation();
+        }
+
+        // Enhanced social links interaction
+        this.socialLinks.forEach(link => {
+            link.addEventListener('mouseenter', this.handleSocialHover.bind(this));
+            link.addEventListener('mouseleave', this.handleSocialHover.bind(this));
+            link.addEventListener('click', this.handleSocialClick.bind(this));
+        });
+
+        // Enhanced footer links with loading indicator
+        this.footerLinks.forEach(link => {
+            link.addEventListener('click', this.handleFooterLinkClick.bind(this));
+            link.addEventListener('mouseenter', this.handleLinkHover.bind(this));
+        });
+    }
+
+    handleNewsletterSubmit(e) {
+        e.preventDefault();
+        const emailInput = this.newsletterForm.querySelector('input[type="email"]');
+        const email = emailInput.value.trim();
+
+        if (this.validateEmail(email)) {
+            // Here you would typically send this to your backend
+            console.log('Newsletter subscription for:', email);
+            this.showSubscriptionMessage('Thank you for subscribing!');
+            emailInput.value = '';
+        } else {
+            this.showSubscriptionMessage('Please enter a valid email address.', true);
+        }
+    }
+
+    validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    showSubscriptionMessage(message, isError = false) {
+        const messageEl = document.createElement('div');
+        messageEl.className = `subscription-message ${isError ? 'error' : 'success'}`;
+        messageEl.textContent = message;
+
+        const existingMessage = this.newsletterForm.querySelector('.subscription-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+
+        this.newsletterForm.appendChild(messageEl);
+        setTimeout(() => messageEl.remove(), 3000);
+    }
+
+    handleSocialHover(e) {
+        const link = e.currentTarget;
+        link.style.transition = 'transform 0.3s ease';
+        link.style.transform = e.type === 'mouseenter' ? 'translateY(-2px)' : '';
+    }
+
+    handleFooterLinkClick(e) {
+        const href = e.currentTarget.getAttribute('href');
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
+
+    animateFooterLinks() {
+        const footerSections = $$('.footer-section');
+        footerSections.forEach((section, index) => {
+            section.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
+            section.style.opacity = '0';
+        });
+    }
+
+    handleLinkHover(e) {
+        const link = e.currentTarget;
+        const text = link.textContent;
+        
+        // Create and animate link highlight effect
+        const highlight = document.createElement('span');
+        highlight.className = 'link-highlight';
+        highlight.style.cssText = `
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        `;
+        
+        link.style.position = 'relative';
+        link.appendChild(highlight);
+        
+        requestAnimationFrame(() => {
+            highlight.style.width = '100%';
+        });
+        
+        link.addEventListener('mouseleave', () => {
+            highlight.style.width = '0';
+            setTimeout(() => highlight.remove(), 300);
+        }, { once: true });
+    }
+
+    setupSocialShare() {
+        this.socialLinks.forEach(link => {
+            link.setAttribute('title', 'Share on ' + link.textContent);
+            link.setAttribute('aria-label', 'Share on ' + link.textContent);
+        });
+    }
+
+    handleSocialClick(e) {
+        e.preventDefault();
+        const platform = e.currentTarget.textContent.toLowerCase();
+        const url = window.location.href;
+        const text = "Check out HomeIns - Luxury Living Redefined";
+        
+        let shareUrl;
+        switch(platform) {
+            case 'facebook':
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                break;
+            case 'twitter':
+                shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+                break;
+            case 'pinterest':
+                shareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&description=${encodeURIComponent(text)}`;
+                break;
+            case 'instagram':
+                // Instagram doesn't support direct sharing, show a message instead
+                alert('Follow us on Instagram @HomeIns');
+                return;
+            default:
+                shareUrl = url;
+        }
+        
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+
+    initializeParallax() {
+        if (!this.footer) return;
+        
+        let ticking = false;
+        const footerBg = document.createElement('div');
+        footerBg.className = 'footer-parallax-bg';
+        this.footer.appendChild(footerBg);
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * 0.15;
+                    
+                    if (footerBg) {
+                        footerBg.style.transform = `translate3d(0, ${rate}px, 0)`;
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    }
+
+    addInputAnimation() {
+        const input = this.newsletterForm.querySelector('input');
+        const label = document.createElement('label');
+        label.className = 'newsletter-label';
+        label.textContent = 'Your email';
+        
+        input.parentNode.insertBefore(label, input);
+        
+        input.addEventListener('focus', () => {
+            label.classList.add('active');
+        });
+        
+        input.addEventListener('blur', () => {
+            if (!input.value) {
+                label.classList.remove('active');
+            }
+        });
+        
+        if (input.value) {
+            label.classList.add('active');
+        }
+    }
+}
+
 // Main Application Class
 class HomeInsAboutApp {
     constructor() {
@@ -734,6 +944,7 @@ class HomeInsAboutApp {
             this.components.scroll = new ScrollController();
             this.components.cards = new CardInteractions();
             this.components.newsletter = new NewsletterController();
+            this.components.footer = new FooterController();
             
             // Initialize performance monitoring in development
             if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
